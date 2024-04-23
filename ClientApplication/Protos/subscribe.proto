@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "ClientApplication";
+
+package subscribe;
+
+service SubscriptionService {
+  rpc Subscribe (SubscribeRequest) returns (SubscribeResponse);
+  rpc Unsubscribe (UnsubscribeRequest) returns (UnsubscribeResponse);
+}
+
+
+message SubscribeRequest {
+  string email = 1;
+}
+
+message SubscribeResponse {
+  string message = 1;
+}
+
+message UnsubscribeRequest {
+  string email = 1;
+}
+
+message UnsubscribeResponse {
+  string message = 1;
+}
